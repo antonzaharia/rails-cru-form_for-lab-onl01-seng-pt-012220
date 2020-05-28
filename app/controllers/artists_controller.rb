@@ -9,12 +9,8 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.create(post_params)
+    @artist = Artist.create(params.require(:artist).permit(:name, :bio))
     redirect_to artist_path(@artist)
   end
 
-  private
-    def post_params
-      params.require(:artist).permit(:name, :bio)
-    end
 end
