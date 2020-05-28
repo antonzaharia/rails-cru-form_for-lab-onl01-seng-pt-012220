@@ -5,6 +5,5 @@ class ArtistsController < ApplicationController
   end
 
   def new
-
   end
 end
